@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins')
+  
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+  font-family: 'Poppins', sans-serif
+
+%flex-centered
+  display: flex
+  align-items: center
+  justify-content: center
+
+=fullWidthCustomHeight($height)
+  height: $height
+  width: 100%
+
+// colors
+$light-blue: #79d7ff
+$light-button: #f1f1f1
+
+// fonts
+$font-xs: 10px
+  
+.todo-container
+  @extend %flex-centered
+  flex-direction: column
+  min-height: 100vh
+  width: 100%
+
+  .todo-container--input
+    @extend %flex-centered
+    flex-direction: column
+    width: 300px
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15), 0 0 100px rgba(0, 0, 0, 0.15)
+
+    textarea
+      +fullWidthCustomHeight(60px)
+      resize: none
+      border: 1px solid $light-blue
+      border-bottom: none
+      outline: none
+      padding: 10px
+    
+    button
+      @extend %flex-centered
+      +fullWidthCustomHeight(30px)
+      border: 1px solid $light-blue
+      background: $light-blue
+      color: white
+      text-transform: uppercase
+      letter-spacing: 2px
+
+  .todo-list
+    list-style: none
+    margin-top: 10px
+
+    li
+      margin-top: 20px
+
+      p
+        @extend %flex-centered
+
+        span
+          font-size: $font-xs
+          text-transform: uppercase
+          color: white
+          padding: 2px 5px
+          border-radius: 3px
+          margin-left: 5px
+
+          &.doing
+            background: green
+
+          &.done
+            background: red
+
+.action-buttons
+  @extend %flex-centered
+  margin-top: 10px
+
+  button
+    margin: auto 2px
+    padding: 4px 10px
+    background: $light-button
+    border: 1px solid $light-blue
+      radius: 3px
+    cursor: pointer
+    text-transform: uppercase
+    font-weight: 600
+    letter-spacing: 1px
+
+.todos-count-container
+  @extend %flex-centered
+  flex-direction: column
+  margin-top: 30px
+  font-size: $font-xs
