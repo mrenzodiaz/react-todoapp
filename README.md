@@ -1,6 +1,6 @@
-##Project Description
+## Project Description
 Todo App exam for Pinion Software
-##Dependencies
+## Dependencies
 1. NodeJS
 2. ReactJS
 ## Here are the steps on how to run the todoApp
